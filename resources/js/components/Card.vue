@@ -1,0 +1,56 @@
+<template>
+<div class="card" >
+    <div class="product-item">
+        <img src="">
+        <div class="product-list">
+            <h3>Маленькое черное платье</h3>
+            <span class="price"></span>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+    name: "Card"
+}
+</script>
+
+<style scoped>
+.card{
+    width: 20%;
+}
+
+.product-item {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: 2px solid #F5F5F5;
+    background: white;
+    transition: .3s ease-in;
+}
+
+.product-item:hover {
+    border-bottom: 2px solid #fc5a5a;
+}
+.product-item img {
+    display: block;
+    width: 100%;
+}
+.product-list {
+    background: #fafafa;
+    padding: 15px 0;
+}
+.product-list h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+.price {
+    font-size: 16px;
+    color: #fc5a5a;
+    display: block;
+    margin-bottom: 12px;
+}
+</style>
