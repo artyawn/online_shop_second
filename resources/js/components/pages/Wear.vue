@@ -1,10 +1,15 @@
 <template>
+    <div class="wear">
 
+    </div>
 </template>
 
 <script>
+
 export default {
-    name: "Wear"
+    name: "Wear",
+    methods: {
+    }
 }
 </script>
 

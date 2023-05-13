@@ -3,7 +3,7 @@
     <img class="card__img" src="../../images/img.png">
     <div class="card__name">{{ product.name }}</div>
     <div class="card__price">{{ product.price }} р.</div>
-    <button class="card__button" @click.prevent="addToCart(product.id)">В корзину</button>
+    <button class="card__button" @click.prevent="addToCart()">В корзину</button>
 </div>
 </template>
 
@@ -15,31 +15,30 @@ export default {
     },
 
     methods: {
-        addToCart(id){
+        addToCart(){
             let cart = localStorage.getItem('cart')
             let newProduct = [
                 {
-                    'id': id,
+                    'product': this.product,
                     'qty': 1
                 }
             ]
             if(!cart) {
+                console.log(this.product)
                 localStorage.setItem('cart', JSON.stringify(newProduct));
             } else {
                 cart = JSON.parse(cart)
                 cart.forEach(productInCart => {
-                    if(productInCart.id === id) {
+                    if (productInCart.product.id === this.product.id){
                         productInCart.qty = Number(productInCart.qty) + 1
                         newProduct = null
                     }
-
                 })
                 Array.prototype.push.apply(cart, newProduct)
                 localStorage.setItem('cart', JSON.stringify(cart))
             }
         }
     }
-
 }
 </script>
 

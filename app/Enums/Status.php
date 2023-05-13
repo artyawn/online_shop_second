@@ -2,7 +2,9 @@
 
 namespace App\Enums;
 
-enum Status
+enum Status : string
 {
-
+    case First = 'принят';
+    case Second = 'отправлен';
+    case Third = 'доставлен';
 }

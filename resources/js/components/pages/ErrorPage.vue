@@ -1,19 +1,24 @@
 <template>
     <div class="error-page">
-        нету такого
+       Такой страницы не существует.
     </div>
 </template>
 
 <script>
 export default {
-    name: "404"
+    name: "ErrorPage"
 }
 </script>
 
 <style scoped>
 .error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "PlayfairDisplay Regular", sans-serif;
+    height: 80vh;
     margin: auto;
     font-size: 20px;
+    color: #FFFFFF;
 }
 </style>

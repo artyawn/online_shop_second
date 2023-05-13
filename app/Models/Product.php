@@ -13,11 +13,17 @@ class Product extends Model
         'name',
         'price',
         'description',
-        'category'
+        'category_id'
     ];
 
+    public function scopeFilter($query, $request)
+    {
+        if ($request->name) {
+            $query->where('name', 'like', "%{$request->name}%");
+        }
+    }
     public function category()
     {
-        $this->belongsTo(Category::class, 'category_id', 'id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 }

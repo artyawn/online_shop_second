@@ -136,7 +136,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="{{ route('main.index') }}" class="brand-link">
             <span class="brand-text font-weight-light">ArtShop</span>
         </a>
 
@@ -146,7 +146,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="pages/calendar.html" class="nav-link">
+                        <a href={{ route('orders.index') }} class="nav-link">
                             <i class="fas fa-shopping-bag"></i>
                             <p>
                                 Заказы
@@ -154,7 +154,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('products.index') }}" class="nav-link">
                             <i class="fab fa-product-hunt"></i>
                             <p>
                                 Товары
@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('categories.index') }}" class="nav-link">
                             <i class="fas fa-th-list"></i>
                             <p>
                                 Категории
@@ -170,7 +170,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('users.index') }}" class="nav-link">
                             <i class="fas fa-users"></i>
                             <p>
                                 Пользователи

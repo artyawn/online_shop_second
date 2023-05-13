@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import router from "../../router";
 export default {
     name: "Register",
 
@@ -27,6 +28,7 @@ export default {
                 {name: this.name, email: this.email, password: this.password, confirm_password: this.confirm_password})
                 .then(res =>
                     localStorage.setItem('access_token', res.data.token));
+                    router.push({name:'paintings'})
         }
     }
 }
