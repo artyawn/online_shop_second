@@ -23,7 +23,7 @@ class StoreOrderRequest extends FormRequest
     {
         return [
             'products' => 'required|array',
-            'sum' => 'required|decimal:2',
+            'sum' => 'required|int',
         ];
     }
 }

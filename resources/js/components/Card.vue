@@ -3,15 +3,25 @@
     <img class="card__img" src="../../images/img.png">
     <div class="card__name">{{ product.name }}</div>
     <div class="card__price">{{ product.price }} р.</div>
-    <button class="card__button" @click.prevent="addToCart()">В корзину</button>
+    <div class="card__actions">
+        <button class="card__button" @click.prevent="addToCart()">В корзину</button>
+        <router-link :to="getLink">Подробнее</router-link>
+    </div>
 </div>
 </template>
 
 <script>
+
 export default {
     name: "Card",
     props: {
-        product:{}
+        product:{},
+    },
+
+    computed: {
+        getLink() {
+            return `/paintings/${this.product.id}`
+        },
     },
 
     methods: {

@@ -8,6 +8,7 @@ import Attributes from "../components/pages/Attributes.vue";
 import User from "../components/pages/User.vue";
 import Cart from "../components/pages/Cart.vue";
 import ErrorPage from "../components/pages/ErrorPage.vue";
+import ProductItem from "../components/pages/ProductItem.vue";
 
 const routes = [
     {
@@ -61,6 +62,12 @@ const routes = [
         path: '/:pathMatch(.*)*',
         name: "404",
         component: ErrorPage,
+    },
+
+    {
+        path: '/paintings/:id',
+        name: 'productItem',
+        component: ProductItem
     }
     ]
 

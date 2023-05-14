@@ -25,9 +25,10 @@ export default {
     methods: {
         login() {
             axios.post('api/login', {password: this.password, email: this.email})
-                .then(res =>
-                    localStorage.setItem('access_token', res.data.token));
-                    router.push({name:'paintings'})
+                .then(res => {
+                    localStorage.setItem('access_token', res.data.token)
+                    router.push({name: 'paintings'})
+                })
         }
     }
 }

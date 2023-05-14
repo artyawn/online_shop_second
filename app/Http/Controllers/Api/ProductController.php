@@ -8,6 +8,11 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    public function show(Product $product)
+    {
+//        return new ProductResource($product);
+        return 1111111;
+    }
     public function index()
     {
         return ProductResource::collection(Product::all());

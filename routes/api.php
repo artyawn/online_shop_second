@@ -21,7 +21,8 @@ Route::post('register', [UserController::class, 'store']);
 Route::post('login', [AuthController::class, 'login']);
 Route::middleware('auth:api')->group(function() {
     Route::get('me', [AuthController::class, 'me']);
-    Route::get('paintings', [ProductController::class, 'index']);
+    Route::get('products', [ProductController::class, 'index']);
+    Route::get('products/{product}', [ProductController::class, 'show']);
     Route::get('user', [UserController::class, 'index']);
     Route::post('logout',[AuthController::class, 'logout']);
     Route::post('order', [OrderController::class, 'store']);

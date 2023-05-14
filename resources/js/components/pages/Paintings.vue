@@ -25,8 +25,9 @@ export default {
 
     methods:{
         getProducts(){
-            api.get('api/paintings')
+            api.get('api/products')
                 .then( res => {
+                    console.log(res)
                     this.products = res.data.data
                 })
         }
