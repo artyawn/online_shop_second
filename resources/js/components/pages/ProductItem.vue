@@ -1,16 +1,16 @@
 <template>
     <div class="product-item" v-if="product">
-        <div class="product-item__name">{{ name }}</div>
+        <div class="product-item__name">{{ product.name }}</div>
         <div class="product-item__information-block">
             <div class="product-item__side-block">
                 <img  class="product-item__image" src="../../../images/img.png">
             </div>
             <div class="product-item__side-block">
                 <div class="product-item__description-title">Описание</div>
-                <div class="product-item__description">{{ description }}</div>
+                <div class="product-item__description">{{ product.description }}</div>
                 <div class="product-item__cart-block">
-                    <div class="product-item__price">2222.2 р.</div>
-                    <button class="product-item__button">В корзину</button>
+                    <div class="product-item__price">{{ product.price }} р.</div>
+                    <button class="product-item__button" @click.prevent="addToCart">В корзину</button>
                 </div>
             </div>
         </div>
@@ -19,19 +19,17 @@
 
 <script>
 import api from "../../api";
+import addToCartMixin from "../../mixins/addToCartMixin";
 
 export default {
     name: "ProductItem",
 
     data() {
         return {
-            name: 'WESKER Шапка теплая бини',
-            description: 'Приобретением любого товара покупатель пытается решить определенную проблему. Возьмем, например, девушку. Она ищет вечернее платье. На следующей неделе торжественный прием/корпоратив/свидание. Времени искать, примерять в офлайн-магазине нет. Она вводит запрос в поисковой системе, идет на сайт интернет-магазина, надеясь найти платье мечты. Вы должны понимать это заранее. Потому перед написанием карточки товара, определите проблему представителей целевой аудитории за решением которой они приходят. \n' +
-                '\n' +
-                'Информация описания товара должна быть настолько объемной, чтобы у клиента не осталось дополнительных вопросов.',
             product: undefined
         }
     },
+    mixins:[addToCartMixin],
 
     mounted() {
         this.getProduct()
@@ -41,7 +39,6 @@ export default {
         getProduct(){
             api.get(`products/${this.$route.params.id}`)
                 .then( res => {
-                    console.log(res);
                     this.product = res.data.data;
                 })
         }
@@ -76,7 +73,7 @@ export default {
 }
 
 .product-item__image {
-    width: 70%;
+    width: 60%;
 }
 
 .product-item__description-title {
@@ -89,16 +86,17 @@ export default {
     font-size: 18px;
     margin-top: 20px;
     color: #FFFFFF;
+    min-height: 400px;
     line-height: 1.5;
 }
 
 .product-item__cart-block{
     display: flex;
     justify-content: space-between;
-    margin-top: 300px;
+    margin-top: 30px;
 }
 .product-item__price {
-    //margin-right: 30px;
+    margin-right: 30px;
     font-size: 40px;
     color: #FFFFFF;
     font-family: "PlayfairDisplay Medium",sans-serif;
