@@ -5,7 +5,7 @@
     <div class="card__price">{{ product.price }} р.</div>
     <div class="card__actions">
         <button class="card__button" @click.prevent="addToCart()">В корзину</button>
-        <router-link :to="getLink">Подробнее</router-link>
+        <router-link class="card__button-more" :to="getLink">Подробнее</router-link>
     </div>
 </div>
 </template>
@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .card{
-    padding: 25px 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -63,8 +63,7 @@ export default {
 
 .card__img {
     object-fit: contain;
-    height: 200px;
-    margin-top: 20px;
+    height: 300px;
 }
 
 .card__name{
@@ -78,8 +77,13 @@ export default {
     font-family: "PlayfairDisplay Medium", sans-serif;
 }
 
-.card__button{
+.card__actions {
     margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__button{
     width: 50%;
     font-family: "PlayfairDisplay Regular", sans-serif;
     border: #070707 solid 1px;
@@ -97,20 +101,12 @@ export default {
     background: #070707;
     color: #FFFFFF;
 }
-.button-form {
-    display: flex;
-    font-family: "Roboto Light", sans-serif;
-    border: #FFA943 solid 1px;
-    color: white;
-    padding: 12px 30px;
-    text-align: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 14px;
-    background: transparent;
-    transition: 0.2s;
-    width: 143px;
-    margin-top: 15px;
+.card__button-more {
+   font-family: "PlayfairDisplay Medium", sans-serif;
+   font-size: 14px;
+   text-decoration: none;
+   color: #4a5568;
+    margin-top: 10px;
 }
 
 

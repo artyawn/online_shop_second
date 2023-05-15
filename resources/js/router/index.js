@@ -59,15 +59,15 @@ const routes = [
     },
 
     {
-        path: '/:pathMatch(.*)*',
-        name: "404",
-        component: ErrorPage,
-    },
-
-    {
         path: '/paintings/:id',
         name: 'productItem',
         component: ProductItem
+    },
+
+    {
+        path: '/:pathMatch(.*)*',
+        name: "404",
+        component: ErrorPage,
     }
     ]
 

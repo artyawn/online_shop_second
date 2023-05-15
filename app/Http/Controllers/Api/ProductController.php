@@ -10,8 +10,8 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-//        return new ProductResource($product);
-        return 1111111;
+        return new ProductResource($product);
+
     }
     public function index()
     {

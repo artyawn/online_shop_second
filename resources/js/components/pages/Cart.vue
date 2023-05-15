@@ -35,7 +35,7 @@ export default {
     name: "Cart",
     data() {
         return {
-            productsInCart : {},
+            productsInCart: [],
             errors: {},
             orders: {},
             sum: null
