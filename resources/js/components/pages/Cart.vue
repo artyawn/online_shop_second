@@ -1,5 +1,5 @@
 <template>
-<div class="cart">
+<div class="cart" v-if="productsInCart">
     <div class="cart-button">
         <button  class="cart-button__remove" @click.prevent="clearCart">очистить корзину</button>
     </div>
@@ -35,7 +35,7 @@ export default {
     name: "Cart",
     data() {
         return {
-            productsInCart: [],
+            productsInCart: {},
             errors: {},
             orders: {},
             sum: null
@@ -109,7 +109,7 @@ export default {
                     sum += item.product.price * item.qty
                 })
 
-                api.post('api/order', {sum: sum, products: products}).then(res => {
+                api.post('order', {sum: sum, products: products}).then(res => {
                     console.log(res)
                 })
                 //     .catch(error => {

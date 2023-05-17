@@ -1,5 +1,11 @@
 <template>
 <div class="header-block">
+<!--    <div class="select">-->
+<!--        <ul>-->
+<!--            <li><router-link :to="{name:'orders'}">Заказы</router-link></li>-->
+<!--            <li><router-link :to="{name:'user'}">Профиль</router-link></li>-->
+<!--        </ul>-->
+<!--    </div>-->
     <div class="header-block__links">
     <router-link :to="{name:'paintings'}" class="header-block__link">КАРТИНЫ</router-link>
     <router-link :to="{name:'wear'}" class="header-block__link">ОДЕЖДА</router-link>
@@ -23,6 +29,7 @@ export default {
 </script>
 
 <style scoped>
+
 .header-block {
     margin: auto;
     max-width: 1280px;

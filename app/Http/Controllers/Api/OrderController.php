@@ -18,7 +18,7 @@ class OrderController extends Controller
     {
         $orders = auth()->user()->orders;
 
-        return $orders;
+        return OrderResource::collection($orders);
     }
 
     public function store(StoreOrderRequest $request)
@@ -30,4 +30,5 @@ class OrderController extends Controller
         return new OrderResource($order);
 
     }
+
 }

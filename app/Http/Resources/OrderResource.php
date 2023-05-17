@@ -15,8 +15,12 @@ class OrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-           'products' => $this->products,
-            'sum' => (string)$this->sum
+            'status' => $this->status,
+            'id' => $this->id,
+            'products' => $this->products,
+            'sum' => (string)$this->sum,
+            'date' => date_format($this->created_at, "d.m.Y"),
+            'track_number' => $this->track_number
         ];
     }
 }

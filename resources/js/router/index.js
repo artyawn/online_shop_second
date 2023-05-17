@@ -9,6 +9,7 @@ import User from "../components/pages/User.vue";
 import Cart from "../components/pages/Cart.vue";
 import ErrorPage from "../components/pages/ErrorPage.vue";
 import ProductItem from "../components/pages/ProductItem.vue";
+import Orders from "../components/pages/Orders.vue";
 
 const routes = [
     {
@@ -50,6 +51,12 @@ const routes = [
         path: "/user",
         name: "user",
         component: User,
+    },
+
+    {
+        path: "/orders",
+        name: "orders",
+        component: Orders,
     },
 
     {
