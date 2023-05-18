@@ -26,15 +26,13 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Названия</th>
                         <th scope="col">Действия</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($orders as $order)
                         <tr>
-                            <td>{{ $order->id }}</td>
-                            <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->name }}</a></td>
+                            <td><a href="{{ route('orders.show', $order->id) }}">{{ $order->id }}</a></td>
                             <td><div class="row">
                                     <div class="col"><a href="{{ route('orders.edit', $order->id) }}" class="btn btn-primary">Изменить</a></div>
                                     <div class="col"><form action="{{ route('orders.destroy', $order->id) }}" method="post">

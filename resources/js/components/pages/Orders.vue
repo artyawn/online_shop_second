@@ -91,6 +91,13 @@ export default {
     font-size: 20px;
 }
 
+.orders-table__item-track_number {
+    padding:30px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "PlayfairDisplay Regular", sans-serif;
+    font-size: 18px;
+}
 .orders-table__item-product {
     padding: 5px 20px;
     display: flex;

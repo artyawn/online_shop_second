@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $products = Product::filter($request)->paginate(10);
 
-        return(view('admin.products.index', compact('products')));
+        return view('admin.products.index', compact('products'));
     }
 
     public function create()

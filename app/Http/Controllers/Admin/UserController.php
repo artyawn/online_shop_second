@@ -12,13 +12,13 @@ class UserController extends Controller
     {
         $users = User::filter($request)->paginate(10);
 
-        return(view('admin.users.index', compact('users')));
+        return view('admin.users.index', compact('users'));
     }
 
     public function destroy(User $user)
     {
         $user->delete();
 
-        return redirect(route('users.index'));
+        return redirect()->route('users.index');
     }
 }
