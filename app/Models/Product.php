@@ -13,7 +13,8 @@ class Product extends Model
         'name',
         'price',
         'description',
-        'category_id'
+        'category_id',
+        'photo'
     ];
 
     public function scopeFilter($query, $request)

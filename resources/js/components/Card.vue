@@ -1,6 +1,6 @@
 <template>
 <div class="card">
-    <img class="card__img" src="../../images/img.png">
+    <img class="card__img">
     <div class="card__name">{{ product.name }}</div>
     <div class="card__price">{{ product.price }} р.</div>
     <div class="card__actions">
@@ -24,6 +24,12 @@ export default {
             return `/paintings/${this.product.id}`
         },
     },
+
+    methods: {
+        getPathToPhoto() {
+            return `../../../storage/app/public/photos/${this.product.id}/${this.product.photo}`
+        },
+    }
 }
 </script>
 

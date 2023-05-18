@@ -8,7 +8,7 @@
                 </div><!-- /.col -->
             </div>
         </div>
-        <form action="{{ route('products.store') }}" method="post">
+        <form action="{{ route('products.store') }}" method="post"  enctype="multipart/form-data">
             @csrf
             @method('post')
             <div class="form-group">
@@ -39,6 +39,10 @@
             </div>
             @error('price')
             <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <input type="file" class="form-control" name="photo">
+            @error('photo')
+            <div class="alert alert-danger"> {{ $message }}</div>
             @enderror
             <button type="submit" class="btn btn-primary">Добавить</button>
         </form>
