@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class ProductResource extends JsonResource
 {
@@ -20,7 +21,7 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'description' => $this->description,
             'category_id' => $this->category_id,
-            'photo_path' => "photos/",
+            'photo' => $this->photo
         ];
     }
 }

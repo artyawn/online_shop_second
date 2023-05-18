@@ -1,6 +1,6 @@
 <template>
 <div class="card">
-    <img class="card__img">
+    <img class="card__img" :src="`http://localhost:5173/storage/app/public/photos/${this.product.id}/${this.product.photo}`">
     <div class="card__name">{{ product.name }}</div>
     <div class="card__price">{{ product.price }} р.</div>
     <div class="card__actions">
@@ -16,6 +16,12 @@ export default {
     name: "Card",
     props: {
         product:{},
+    },
+
+    data() {
+       return {
+           link: `../../../storage/app/public/photos/${this.product.id}/${this.product.photo}`
+       }
     },
     mixins: [addToCartMixin],
 
