@@ -1,6 +1,6 @@
 <template>
 <div class="card">
-    <img class="card__img" :src="`http://localhost:5173/storage/app/public/photos/${this.product.id}/${this.product.photo}`">
+    <img class="card__img" :src="`http://localhost:5173/storage/app/public/photos/${product.id}/${product.photo}`">
     <div class="card__name">{{ product.name }}</div>
     <div class="card__price">{{ product.price }} р.</div>
     <div class="card__actions">
@@ -18,11 +18,6 @@ export default {
         product:{},
     },
 
-    data() {
-       return {
-           link: `../../../storage/app/public/photos/${this.product.id}/${this.product.photo}`
-       }
-    },
     mixins: [addToCartMixin],
 
     computed: {
@@ -30,12 +25,6 @@ export default {
             return `/paintings/${this.product.id}`
         },
     },
-
-    methods: {
-        getPathToPhoto() {
-            return `../../../storage/app/public/photos/${this.product.id}/${this.product.photo}`
-        },
-    }
 }
 </script>
 

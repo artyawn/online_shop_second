@@ -3,7 +3,7 @@
         <div class="product-item__name">{{ product.name }}</div>
         <div class="product-item__information-block">
             <div class="product-item__side-block">
-                <img  class="product-item__image" src="../../../images/img.png">
+                <img  class="product-item__image" :src="`http://localhost:5173/storage/app/public/photos/${product.id}/${product.photo}`">
             </div>
             <div class="product-item__side-block">
                 <div class="product-item__description-title">Описание</div>
@@ -26,7 +26,7 @@ export default {
 
     data() {
         return {
-            product: undefined
+            product: {}
         }
     },
     mixins:[addToCartMixin],
